@@ -4,18 +4,15 @@
 
 // const value = 'Ukraine';
 
-export default function fetchCountries(country) {
+export default function fetchCountries() {
 const URL = `https://restcountries.com/v3.1/name/Ukraine`;
 
     return fetch(URL)
         .then(response => {
             return response.json();
         })
-        .then((country) => {
-            
-            createMarkupCountryCard(country)
-            
-        
+        .then((country) => {            
+            createMarkupCountryCard(country)        
         });
 }
 
@@ -32,6 +29,6 @@ function createMarkupCountryCard(country) {
     <p class="country_population">Population: ${c.population}</p>
     <p class="country_languages">Languages: </p>
 </div>
-    `).join(' ');
+    `).join('');
 
 };
