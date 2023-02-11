@@ -8,8 +8,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
-  color: #212121;
+  color: #212121; 
   line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin: 0;
 }
 
 #search-box {
@@ -17,4 +25,29 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  padding: 10px;
+  outline: transparent;
+}
+
+#search-box:focus {
+  transform: scale(1.1);
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  padding: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.country_name {
+  font-size: 30px;
+}
+
+.country_descr {
+  font-size: 20px
 }
