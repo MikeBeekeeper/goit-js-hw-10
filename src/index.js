@@ -10,7 +10,7 @@ const countryInfoEl = document.querySelector(".country-info");
 const inputEl = document.querySelector("#search-box");
 const countryListEl = document.querySelector(".country-list");
 
-inputEl.addEventListener('input', onInput, 300);
+inputEl.addEventListener('input', onInput);
 
 function onInput(e) {
     searchQuery = e.currentTarget.value.trim();
