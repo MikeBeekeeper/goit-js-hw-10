@@ -5,9 +5,7 @@
     <div class="card">
     <p class="country_name">
         <span class="country_flag">
-        <svg width="30px" height="20px">
-        <use href="${c.flags.svg}"></use>
-        </svg>
+        <img src="${c.flags.svg}" width="30px" height="20px">
         </span> <b>${c.name.official}</b>
     </p>
     <p class="country_descr"> <b>Capital:</b> ${c.capital}</p>
@@ -23,9 +21,7 @@
     <li>
         <p class="country_name">
         <span class="country_flag">
-        <svg width="30px" height="20px">
-        <use href="${c.flags.svg}"></use>
-        </svg>
+        <img src="${c.flags.svg}" width="30px" height="20px">
         </span> <b>${c.name.official}</b>
         </p>
     </li>
