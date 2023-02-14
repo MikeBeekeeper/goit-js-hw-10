@@ -10,14 +10,14 @@ const countryInfoEl = document.querySelector(".country-info");
 const inputEl = document.querySelector("#search-box");
 const countryListEl = document.querySelector(".country-list");
 
-inputEl.addEventListener('input', onInput);
+inputEl.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(e) {
-    searchQuery = e.currentTarget.value.trim();
+    searchQuery = e.target.value.trim();
 
     fetchCountries(searchQuery)
         .then(response => {
-            if (!response.ok) {
+            if (!response.ok && searchQuery !== '') {
                 resetCountryListEl();
                 resetCountryInfoEl();
                 Notiflix.Notify.failure('Oops, there is no country with that name')
