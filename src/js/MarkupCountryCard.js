@@ -10,7 +10,7 @@
     </p>
     <p class="country_descr"> <b>Capital:</b> ${c.capital}</p>
     <p class="country_descr"> <b>Population:</b> ${c.population}</p>
-    <p class="country_descr"> <b>Languages:</b> ${Object.values(c.languages)}</p>
+    <p class="country_descr"> <b>Languages:</b> ${Object.values(c.languages).join(', ')}</p>
 </div>
     `).join('');
 };

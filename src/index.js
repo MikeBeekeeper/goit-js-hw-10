@@ -19,6 +19,7 @@ function onInput(e) {
         .then(response => {
             if (!response.ok) {
                 resetCountryListEl();
+                resetCountryInfoEl();
                 Notiflix.Notify.failure('Oops, there is no country with that name')
             }
             return response.json();
@@ -28,7 +29,6 @@ function onInput(e) {
                 resetCountryListEl();
                 resetCountryInfoEl();
                 Notiflix.Notify.warning('Too many matches found. Please enter a more specific name.');  
-                return markup = '';
             }
             if (country.length > 1 && country.length < 11) {
                 resetCountryInfoEl();
