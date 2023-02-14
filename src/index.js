@@ -41,7 +41,8 @@ function onInput(e) {
                 const markup = createMarkupCountryCard(country) 
                 return updateCountryMarkup(markup)
             }           
-        })  
+        })
+        .catch(error)
 };
 
 function resetCountryInfoEl() {
