@@ -15,7 +15,8 @@ inputEl.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 function onInput(e) {
     searchQuery = e.target.value.trim();
 
-    fetchCountries(searchQuery)
+    if (searchQuery) {
+        fetchCountries(searchQuery)
         .then(response => {
             if (!response.ok && searchQuery !== '') {
                 resetCountryListEl();
@@ -42,7 +43,10 @@ function onInput(e) {
                 return updateCountryMarkup(markup)
             }           
         })
-        .catch(error)
+            .catch(error => {
+                throw new Error(response.status)
+            })
+    }
 };
 
 function resetCountryInfoEl() {
